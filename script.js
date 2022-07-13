@@ -12,6 +12,14 @@ while (userAnswer !== "quit" && userAnswer !== "q") {
     const newTodo = prompt(`What is the new todo?`);
     todoList.push(newTodo);
     console.log(`${newTodo} added to the list`);
+  } else if (userAnswer === "delete") {
+    const index = parseInt(prompt(`enter an index to delete: `));
+    if (!Number.isNaN(index)) {
+      const deleted = todoList.splice(index, 1);
+      console.log(`Ok, deleted ${deleted[0]}`);
+    } else {
+      console.log("Unknown index");
+    }
   }
   userAnswer = prompt(`what would you like todo?`);
 }
